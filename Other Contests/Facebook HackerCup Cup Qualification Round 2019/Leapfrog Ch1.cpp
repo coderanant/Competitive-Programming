@@ -31,7 +31,7 @@ int32_t main()
     {
     	string l;
     	cin>>l;
-    	int n=l.size();k
+    	int n=l.size();
     	int lil=0;
     	f1(i,0,n)
     	{
