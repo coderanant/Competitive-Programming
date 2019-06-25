@@ -30,95 +30,27 @@ int32_t main()
     int a[n];
     f1(i,0,n)
     cin>>a[i];
-    //sort(a,a+n);
-    if(n==1)
-    {
-    	if(a[0]<0)
-    	{
-    		a[0]=((-1)*a[0])-1;
-    	}
-    	cout<<a[0];
-    	return 0;
-    }
     f1(i,0,n)
     {
-    	if(a[i]==0)
-    		a[i]=-1;
+    	if(a[i]>=0)
+    	{
+    		a[i]=-a[i]-1;
+    	}
     }
-    if(n%2==0)
+    if(n%2)
     {
+    	int min=a[0],mini=0;
     	f1(i,0,n)
     	{
-    		if(a[i]>0)
+    		if(a[i]<min)
     		{
-    			a[i]=((-1)*a[i])-1;
+    			min=a[i];
+    			mini=i;
     		}
     	}
-    	f1(i,0,n)
-    	cout<<a[i]<<gp;
-    	return 0;
+    	a[mini]=-a[mini]-1;
     }
-    else
-    {
-    	int minpos=-1,minin=-1;
-    	f1(i,0,n)
-    	{
-    		if(a[i]>0)
-    		{
-    			if(a[i]>minpos)
-    			{
-    				minpos=a[i];
-    				minin=i;
-    			}
-    		}
-    	}
-    	//cout<<minin<<endl;
-    	if(minin!=-1)
-    	{
-    		f1(i,0,n)
-    		{
-    			if(i!=minin)
-    			{
-    				if(a[i]>0)
-    				a[i]=((-1)*a[i])-1;
-    			}
-    		}
-    		f1(i,0,n)
-    		{
-    			cout<<a[i]<<gp;
-    		}
-    		return 0;
-    	}
-    	else
-    	{
-    		int minneg=1;
-    		minin=-1;
-    		f1(i,0,n)
-    		{
-    			if(a[i]<0)
-    			{
-    				if(a[i]<minneg)
-    				{
-    					minneg=a[i];
-    					minin=i;
-    				}
-    			}
-    		}
-    		if(minneg!=-1)
-    		{
-    			a[minneg]=((-1)*a[minneg])-1;
-    			f1(i,0,n)
-    			cout<<a[i]<<gp;
-    			return 0;
-    		}
-    		else
-    		{
-    			a[0]=((-1)*a[0])-1;
-    			f1(i,0,n)
-    			cout<<a[i]<<gp;
-    			return 0;
-    		}
-    	}
-    }
+    f1(i,0,n)
+    cout<<a[i]<<gp;
     return 0;
 }
