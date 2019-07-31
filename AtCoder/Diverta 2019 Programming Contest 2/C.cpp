@@ -17,83 +17,47 @@ const int mod=1000000007;
 int i,j;
 ll temp;
 
-vector<pair<int,int>> ans;
-void maxneg(set<int> neg, set<int> pos)
-{
-	if(neg.size()==2&&pos.size()==0)
-	{
-
-	}
-}
-
-void maxpos(set<int> neg,set<int> pos)
-{
-	if(pos.size()==2&&neg.size()==0)
-	{
-		auto itr=(pos.end());
-		itr--;
-		ans.pb(mp((*itr)-(*pos.begin())));
-		return (*itr)-(*pos.begin());
-
-	}
-	else if(neg.size()==1&&pos.size()==1)
-	{
-		ans.pb()
-		return (*pos.begin())-(*neg.begin());
-	}
-	else if(neg.size()==2&&pos.size()==0)
-	{
-		auto itr=(neg.end());
-		itr--;
-		return (*neg.begin())-(*itr);
-	}
-	else
-		return 
-}
-
 int32_t main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    #ifndef ONLINE_JUDGE
-    	freopen("/home/akmittal/Desktop/Competitive Programming/in.txt","r",stdin);
-    	freopen("/home/akmittal/Desktop/Competitive Programming/out.txt","w",stdout);
-    #endif
-   	int n;
-   	multiset<int> neg;
-   	multiset<int> pos;
-   	int zer=0;
-   	f1(i,0,n)
-   	{
-   		cin>>temp;
-   		if(temp<0)
-   		{
-   			neg.insert(temp);
-   		}
-   		else if(temp==0)
-   		{
-   			zer++;
-   		}
-   		else
-   		{
-   			pos.insert(temp);
-   		}
-   	}
-   	while(zer)
-   	{
-   		if(pos.size()<neg.size())
-   		{
-   			pos.insert(0);
-   			zer--;
-   		}
-   		else if(neg.size()<pos.size())
-   		{
-   			neg.insert(0);
-   			zer--;
-   		}
-   		else
-   			break;
-   	}
-   	int ans=maxpos(neg,pos);
-	return 0;
+    // #ifndef ONLINE_JUDGE
+    //     freopen("/home/akmittal/Desktop/Competitive Programming/in.txt","r",stdin);
+    //     freopen("/home/akmittal/Desktop/Competitive Programming/out.txt","w",stdout);
+    // #endif
+    int n;
+    cin>>n;
+    int a[n];
+    f1(i,0,n)
+    cin>>a[i];
+
+    sort(a,a+n);
+    vector<int> odd;
+    vector<int> even;
+    vector<pair<int,int>> ans;
+    int st=a[n-1];
+    odd.pb(a[0]);
+    f1(i,1,n-1)
+    {
+        if(a[i]<0)
+            odd.pb(a[i]);
+        else
+            even.pb(a[i]);
+    }
+    f1(i,0,even.size())
+    {
+        ans.pb(mp(odd[0],even[i]));
+        odd[0]-=even[i];
+    }
+    f1(i,0,odd.size())
+    {
+        ans.pb(mp(st,odd[i]));
+        st-=odd[i];
+    }
+    cout<<st<<endl;
+    f1(i,0,ans.size())
+    {
+        cout<<ans[i].ff<<gp<<ans[i].ss<<endl;
+    }
+    return 0;
 }
