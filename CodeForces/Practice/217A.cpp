@@ -3,7 +3,6 @@
 using namespace std;
 
 #define int long long
-#define ll long long
 #define f1(i,a,b) for(int i=a;i<b;i++)
 #define f2(i,a,b) for(int i=a;i>=b;i--)
 #define endl '\n'
