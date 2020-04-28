@@ -51,6 +51,7 @@ int dfs(int x, int last, int k)
     }
     return 0;
 }
+
 int32_t main()
 {
     ios_base::sync_with_stdio(false);
