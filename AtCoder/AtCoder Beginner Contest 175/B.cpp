@@ -38,7 +38,6 @@ int32_t main()
                 {
                     if(l[i] + l[j] > l[k] && l[j] + l[k] > l[i] && l[i] + l[k] > l[j])
                     {
-                        // cout<<i<<gp<<j<<gp<<k<<endl;
                         ans++;
                     }
                 }
