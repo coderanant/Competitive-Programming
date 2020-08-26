@@ -42,13 +42,6 @@ int32_t main()
                 dp[i][j]++;
             }
         }
-        // f1(i,1,n+1)
-        // {
-        //     f1(j,1,n +1)
-        //     cout<<dp[i][j]<<" ";
-        //     cout<<endl;
-        // }
-        // cout<<endl;
         f1(i, 1, n + 1)
         {
             f1(j, 1, n + 1)
@@ -56,14 +49,6 @@ int32_t main()
                 dp[i][j] = dp[i][j] + dp[i - 1][j] + dp[i][j - 1] - dp[i - 1][j - 1];
             }
         }
-        // cout<<endl;
-        // f1(i,1,n+1)
-        // {
-        //     f1(j,1,n +1)
-        //     cout<<dp[i][j]<<" ";
-        //     cout<<endl;
-        // }
-        // cout<<endl;
         int ans = 0;
         f1(i, 1, n - 2)
         {
@@ -75,12 +60,6 @@ int32_t main()
                 }
             }
         }
-        // f1(i,1,n+1)
-        // {
-        //     f1(j,1,n +1)
-        //     cout<<dp[i][j]<<" ";
-        //     cout<<endl;
-        // }
         cout<<ans<<endl;
     }
     return 0;
