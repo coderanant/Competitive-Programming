@@ -49,27 +49,6 @@ int32_t main()
             ans = max(ans, currs + currw + temp + temp2);
 
         }
-        // temp = min(cs - currs, f / s);
-        // ans1 += temp + min((f - temp * s) / w, cw - currw);
-
-        // cout<<ans1<<endl;
-        // ans = ans1;
-        // ans1 = 0;
-        // currs = 0, currw = 0;
-        // for(int i = 0; i <= cs; i++)
-        // {
-        //     if(i * s > f)
-        //     break;
-        //     if(i + min(cw, (f - i * s) / w) > ans1)
-        //     {
-        //         ans1 = max(ans1, i + min(cw, (f - i * s) / w));
-        //         currs = i; currw = min(cw, f - (i * s) / w);
-        //     }
-        // }
-        // temp = min(cs - currs, p / s);
-        // ans1 += temp + min((p - temp * s) / w, cw - currw);
-
-        // ans = max(ans, ans1);
         cout<<ans<<endl;
     }
     return 0;
