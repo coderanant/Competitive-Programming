@@ -18,23 +18,18 @@ const int mod = 1000000007;
 const ld PI = acosl(-1.0);
 ll temp;
 
-int primes[1000001];
 int ins[1000001];
+int primes[1000001]; // careful with limits
 void sieve()
 {
+    // add line for 1 and 0 if required, currently prime
     for (int i = 0; i < 1000001; i++)
         primes[i] = i;
     for (int i = 2; i * i < 1000001; i++)
-    {
-        if (primes[i] == i)
-        {
+            if (primes[i] == i)
             for (int j = i * i; j < 1000001; j += i)
-            {
                 if (primes[j] == j)
                     primes[j] = i;
-            }
-        }
-    }
 }
 int32_t main()
 {
