@@ -60,7 +60,6 @@ int32_t main()
                 ans = max(ans, solver(i, p, q));
                 ans = max(ans, solver(q / i, p, q));
             }
-            // cout<<i<<gp<<ans<<endl;
         }
         ans = max(ans, solver(q, p, q));
         cout<<ans<<endl;
